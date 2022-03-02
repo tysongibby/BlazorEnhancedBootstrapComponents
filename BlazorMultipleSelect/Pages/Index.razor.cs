@@ -6,9 +6,11 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace BlazorMultipleSelect.Pages
-{
+{    
     public partial class Index
     {
+        DualSelect dualSelect;
+        List<Item> resultList = new List<Item>();
         List<Item> Items = new List<Item>
         {
             new Item{ Id=1, Value="One"},
@@ -23,5 +25,11 @@ namespace BlazorMultipleSelect.Pages
             new Item{ Id=10, Value="Ten"},
             new Item{ Id=11, Value="Eleven"},
         };
+
+        private void Next()
+        {
+            resultList = new List<Item> { };
+            resultList = dualSelect.Selected;
+        }
     }
 }
