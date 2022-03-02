@@ -1,2 +1,2 @@
 # Blazor Dual Multiple Select Component
-Dual Multiple select Blazor component. Holds non-selected items in the left select element and selected items in the right select element.
+Dual Multiple select Blazor component. Holds non-selected items in the left select element and selected items in the right select element. Add "@ref=Selected" to access result list of selected items.
