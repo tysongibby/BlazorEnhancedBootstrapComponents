@@ -9,46 +9,19 @@ namespace BlazorMultipleSelect.Pages
 {
     public partial class Index
     {
-        private string removeAllText = "<<";
-        [Parameter]
-        public List<ItemModel> NotSelected { get; set; } = new List<ItemModel>();
-        [Parameter]
-        public List<ItemModel> Selected { get; set; } = new List<ItemModel>();
-
-        protected override void OnInitialized()
+        List<Item> Items = new List<Item>
         {
-            NotSelected = new List<ItemModel> 
-            {
-                new ItemModel {Name = "One", Value = 1},
-                new ItemModel {Name = "Two", Value = 2},
-                new ItemModel {Name = "Three", Value = 3},
-                new ItemModel {Name = "Four", Value = 4},
-                new ItemModel {Name = "Five", Value = 5}
-            };
-        }
-
-        private void Select(ItemModel item)
-        {
-            NotSelected.Remove(item);
-            Selected.Add(item);
-        }
-
-        private void Deselect(ItemModel item)
-        {
-            Selected.Remove(item);
-            NotSelected.Add(item);
-        }
-
-        private void SelectAll()
-        {
-            Selected.AddRange(NotSelected);
-            NotSelected.Clear();
-        }
-
-        private void DeselectAll()
-        {
-            NotSelected.AddRange(Selected);
-            Selected.Clear();
-        }
+            new Item{ Id=1, Value="One"},
+            new Item{ Id=2, Value="Two"},
+            new Item{ Id=3, Value="Three"},
+            new Item{ Id=4, Value="Four"},
+            new Item{ Id=5, Value="Five"},
+            new Item{ Id=6, Value="Six"},
+            new Item{ Id=7, Value="Seven"},
+            new Item{ Id=8, Value="Eight"},
+            new Item{ Id=9, Value="Nine"},
+            new Item{ Id=10, Value="Ten"},
+            new Item{ Id=11, Value="Eleven"},
+        };
     }
 }
