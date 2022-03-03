@@ -14,39 +14,52 @@ namespace BlazorMultipleSelect.Pages
     public partial class DualSelect
     {
         [Parameter]
-        public List<DualSelectOption> Options { get; set; } = new List<DualSelectOption>();
-
-        public List<DualSelectOption> NotSelected { get; set; } = new List<DualSelectOption>();
+        public List<DualSelectOption> Options { get; set; } = new List<DualSelectOption>();        
         public List<DualSelectOption> Selected { get; set; } = new List<DualSelectOption>();
+        public int BoxSize { get; set; } = 5;
+
+        private List<DualSelectOption> notSelected = new List<DualSelectOption>();
+        private List<DualSelectOption> notSelectedDisplay = new List<DualSelectOption>();
         private string removeAllText = "<<";
-        private int BoxSize { get; set; } = 5;
+        private string searchNotSelectedText = string.Empty;
+        
 
         protected override void OnInitialized()
         {
-            NotSelected = Options;
+            notSelected = Options;
+            notSelectedDisplay = notSelected;
+        }
+
+        private void SearchTheOptions(ChangeEventArgs e)
+        {
+            searchNotSelectedText = (string)e.Value;
+            notSelectedDisplay = notSelected.Where(ns => ns.Value.Contains(searchNotSelectedText)).ToList();
+            StateHasChanged();
         }
 
         private void Select(DualSelectOption option)
         {
-            NotSelected.Remove(option);
+            notSelected.Remove(option);
             Selected.Add(option);
+            notSelectedDisplay = notSelected;
         }
 
         private void Deselect(DualSelectOption option)
         {
             Selected.Remove(option);
-            NotSelected.Add(option);
+            notSelected.Add(option);
+            notSelectedDisplay = notSelected;
         }
 
         private void SelectAll()
         {
-            Selected.AddRange(NotSelected);
-            NotSelected.Clear();
+            Selected.AddRange(notSelected);
+            notSelected.Clear();
         }
 
         private void DeselectAll()
         {
-            NotSelected.AddRange(Selected);
+            notSelected.AddRange(Selected);
             Selected.Clear();
         }
 

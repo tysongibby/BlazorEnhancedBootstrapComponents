@@ -1,10 +1,14 @@
 ﻿<div class="container">
     <div class="row">
         <div class="col-6">
+            <div class="mb-1">
+                <label for="search" class="form-label">Search</label>                
+                <input id="search" class="form-control" @oninput="SearchTheOptions" />
+            </div>
             <div class="row">
                 <div class="col-6">
                     <select id="NotSelected" class="form-control border" multiple="multiple" size="@BoxSize" style="width: 200px">
-                        @foreach (var option in NotSelected)
+                        @foreach (var option in notSelectedDisplay)
                         {
                             <option id="@option.Id" @onclick="@(() => Select(option))">@option.Value</option>
                         }
