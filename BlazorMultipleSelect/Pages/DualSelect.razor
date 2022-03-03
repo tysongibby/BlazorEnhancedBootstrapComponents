@@ -1,22 +1,26 @@
 ﻿<div class="container">
     <div class="row">
-        <div class="col-3">
-            <select id="NotSelected" class="border" multiple="multiple" size="@BoxSize" style="width: 200px">
-                @foreach (var item in NotSelected)
-                {
-                    <option id="@item.Id" @onclick="@(() => Select(item))">@item.Value</option>
-                }
-            </select>
-            <button type="button" class="btn btn-outline-primary" @onclick="SelectAll">Add all >></button>
-        </div>
-        <div class="col-3">
-            <select id="Selected" class="border" multiple="multiple" size="@BoxSize" style="width: 200px">
-                @foreach (var item in Selected)
-                {
-                    <option id="@item.Id" @onclick="@(() => Deselect(item))">@item.Value</option>
-                }
-            </select>
-            <button type="button" class="btn btn-outline-primary" @onclick="DeselectAll">@removeAllText Remove all</button>
+        <div class="col-6">
+            <div class="row">
+                <div class="col-6">
+                    <select id="NotSelected" class="form-control border" multiple="multiple" size="@BoxSize" style="width: 200px">
+                        @foreach (var option in NotSelected)
+                        {
+                            <option id="@option.Id" @onclick="@(() => Select(option))">@option.Value</option>
+                        }
+                    </select>
+                    <button type="button" class="btn btn-outline-primary" @onclick="SelectAll">Add all >></button>
+                </div>
+                <div class="col-6">
+                    <select id="Selected" class="form-control border" multiple="multiple" size="@BoxSize" style="width: 200px">
+                        @foreach (var option in Selected)
+                        {
+                            <option id="@option.Id" @onclick="@(() => Deselect(option))">@option.Value</option>
+                        }
+                    </select>
+                    <button type="button" class="btn btn-outline-primary" @onclick="DeselectAll">@removeAllText Remove all</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>

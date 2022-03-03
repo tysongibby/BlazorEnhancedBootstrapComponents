@@ -1,15 +1,27 @@
 ﻿@page "/"
+@using static BlazorMultipleSelect.Pages.DualSelect
+
 
 <h3>Dual Select Example</h3>
 <h5 class="mt-2">Make your selection</h5>
-<DualSelect @ref="dualSelect" Items="Items"></DualSelect>
-<button class="btn btn-primary mt-2" @onclick="Next">Next</button>
+<DualSelect @ref="dualSelect" Options="DualSelectOptions"></DualSelect>
+<button class="btn btn-primary mt-2" type="button" @onclick="SubmitDualSelect">Submit Dual</button>
 
 <h5 class="mt-2">The following were selected:</h5>
 <ul>
-    @foreach (Item item in resultList)
+    @foreach (DualSelectOption option in resultList)
     {
-        <li id="@item.Id">@item.Value</li>
+        <li id="@option.Id">@option.Value</li>
     }
 
 </ul>
+
+<h3 class="mt-4">Single Select Example</h3>
+<h5 class="mt-2">Make your selection</h5>
+<SingleSelect @ref="singleSelect" Options="SingleSelectOptions"></SingleSelect>
+<button class="btn btn-primary mt-2" type="button" @onclick="SubmitSingleSelect">Submit Single</button>
+
+<h5 class="mt-2">The following was selected:</h5>
+<p>@singleSelectResult</p>
+
+
