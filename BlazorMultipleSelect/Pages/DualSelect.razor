@@ -1,28 +1,35 @@
 ﻿<div class="container">
     <div class="row">
         <div class="col-6">
-            <div class="mb-1">
-                <label for="search" class="form-label">Search</label>                
-                <input id="search" class="form-control" @oninput="SearchTheOptions" />
-            </div>
+            @*Put title here*@
             <div class="row">
                 <div class="col-6">
-                    <select id="NotSelected" class="form-control border" multiple="multiple" size="@BoxSize" style="width: 200px">
+                    <div class="mb-1">
+                        <input id="search" class="form-control" placeholder="Search not selected" @oninput="SearchTheOptions" />
+                    </div>
+                    <select id="NotSelected" class="form-control border" multiple="multiple" size="@BoxSize">
                         @foreach (var option in notSelectedDisplay)
                         {
                             <option id="@option.Id" @onclick="@(() => Select(option))">@option.Value</option>
                         }
                     </select>
-                    <button type="button" class="btn btn-outline-primary" @onclick="SelectAll">Add all >></button>
+                    <div class="p-1">
+                        <button type="button" class="btn btn-outline-primary" @onclick="SelectAll">Add all >></button>
+                    </div>
                 </div>
                 <div class="col-6">
-                    <select id="Selected" class="form-control border" multiple="multiple" size="@BoxSize" style="width: 200px">
+                    <div class="mb-1">
+                        <input id="search" class="form-control" placeholder="Search selected" @oninput="SearchTheOptions" />
+                    </div>
+                    <select id="Selected" class="form-control border" multiple="multiple" size="@BoxSize">
                         @foreach (var option in Selected)
                         {
                             <option id="@option.Id" @onclick="@(() => Deselect(option))">@option.Value</option>
                         }
                     </select>
-                    <button type="button" class="btn btn-outline-primary" @onclick="DeselectAll">@removeAllText Remove all</button>
+                    <div class="p-1 align-content-end">
+                        <button type="button" class="btn btn-outline-primary" @onclick="DeselectAll">@removeAllText Remove all</button>
+                    </div>
                 </div>
             </div>
         </div>
