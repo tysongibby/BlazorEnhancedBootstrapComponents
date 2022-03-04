@@ -31,8 +31,7 @@ namespace BlazorMultipleSelect.Pages
             notSelected = Options;
             notSelectedDisplay = notSelected;
         }
-
-        //TODO: search uppr and lower case
+        
         private void SearchNotSelected(ChangeEventArgs e)
         {
             searchNotSelectedText = (string)e.Value;
