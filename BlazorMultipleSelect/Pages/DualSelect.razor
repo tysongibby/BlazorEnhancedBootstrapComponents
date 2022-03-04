@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-6">
                     <div class="mb-1">
-                        <input id="search" class="form-control" placeholder="Search not selected" @oninput="SearchNotSelected" />
+                        <input id="search" class="form-control" placeholder="Search not selected" autocomplete="off" @oninput="SearchNotSelected" />
                     </div>
                     <select id="NotSelected" class="form-control border" multiple="multiple" size="@BoxHeight">
                         @foreach (var option in notSelectedDisplay)
@@ -19,7 +19,7 @@
                 </div>
                 <div class="col-6">
                     <div class="mb-1">
-                        <input id="search" class="form-control" placeholder="Search selected" @oninput="SearchSelected" />
+                        <input id="search" class="form-control" placeholder="Search selected" autocomplete="off" @oninput="SearchSelected" />
                     </div>
                     <select id="Selected" class="form-control border" multiple="multiple" size="@BoxHeight">
                         @foreach (var option in selectedDisplay)

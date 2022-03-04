@@ -41,46 +41,74 @@ namespace BlazorMultipleSelect.Pages
         {
             searchNotSelectedText = (string)e.Value;
             notSelectedDisplay = notSelected.Where(ns => ns.Value.Contains(searchNotSelectedText, StringComparison.OrdinalIgnoreCase)).ToList();
-            StateHasChanged();
+            //StateHasChanged();
         }
 
         private void SearchSelected(ChangeEventArgs e)
         {
             searchSelectedText = (string)e.Value;
             selectedDisplay = Selected.Where(ns => ns.Value.Contains(searchSelectedText, StringComparison.OrdinalIgnoreCase)).ToList();
-            StateHasChanged();
+            //StateHasChanged();
         }
 
         private void Select(DualSelectOption option)
         {
+            // update lists
             notSelected.Remove(option);
             Selected.Add(option);
 
+            // set display text
             notSelectedDisplay = notSelected;
             selectedDisplay = Selected;
+
+            // clear search fields (not working as these are unbound fields)
+            searchNotSelectedText = string.Empty;
+            searchSelectedText = string.Empty;
         }
 
         private void Deselect(DualSelectOption option)
         {
+            // update lists
             Selected.Remove(option);
             notSelected.Add(option);
 
+            // set display text
             notSelectedDisplay = notSelected;
             selectedDisplay = Selected;
+
+            // clear search fields (not working as these are unbound fields)
+            searchNotSelectedText = string.Empty;
+            searchSelectedText = string.Empty;
         }
 
         private void SelectAll()
         {
-            Selected.AddRange(notSelected);
-            selectedDisplay = Selected;
+            // update lists
+            Selected.AddRange(notSelected);            
             notSelected.Clear();
+
+            // set display text
+            selectedDisplay = Selected;
+            notSelectedDisplay = notSelected;
+
+            // clear search fields (not working as these are unbound fields)
+            searchNotSelectedText = string.Empty;
+            searchSelectedText = string.Empty;
         }
 
         private void DeselectAll()
         {
-            notSelected.AddRange(Selected);
-            notSelectedDisplay = notSelected;
+            // update lists
+            notSelected.AddRange(Selected);            
             Selected.Clear();
+
+            // set display text
+            notSelectedDisplay = notSelected;
+            selectedDisplay = Selected;
+
+            // clear search fields (not working as these are unbound fields)
+            searchNotSelectedText = string.Empty;
+            searchSelectedText = string.Empty;
         }
 
     }
