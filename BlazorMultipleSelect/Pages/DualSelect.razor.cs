@@ -17,6 +17,11 @@ namespace BlazorMultipleSelect.Pages
         public List<DualSelectOption> Options { get; set; } = new List<DualSelectOption>();        
         public List<DualSelectOption> Selected { get; set; } = new List<DualSelectOption>();
         public int BoxHeight { get; set; } = 5;
+        public class DualSelectOption
+        {
+            public int Id { get; set; }
+            public string Value { get; set; }
+        }
 
         private List<DualSelectOption> notSelected = new List<DualSelectOption>();
         private List<DualSelectOption> notSelectedDisplay = new List<DualSelectOption>();
@@ -78,10 +83,5 @@ namespace BlazorMultipleSelect.Pages
             Selected.Clear();
         }
 
-        public class DualSelectOption
-        {
-            public int Id { get; set; }
-            public string Value { get; set; }
-        }
     }
 }
