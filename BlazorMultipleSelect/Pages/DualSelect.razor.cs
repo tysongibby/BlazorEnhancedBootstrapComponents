@@ -16,13 +16,15 @@ namespace BlazorMultipleSelect.Pages
         [Parameter]
         public List<DualSelectOption> Options { get; set; } = new List<DualSelectOption>();        
         public List<DualSelectOption> Selected { get; set; } = new List<DualSelectOption>();
-        public int BoxSize { get; set; } = 5;
+        public int BoxHeight { get; set; } = 5;
 
         private List<DualSelectOption> notSelected = new List<DualSelectOption>();
         private List<DualSelectOption> notSelectedDisplay = new List<DualSelectOption>();
-        private string removeAllText = "<<";
+        private List<DualSelectOption> selectedDisplay = new List<DualSelectOption>();
+        private readonly string removeAllText = "<<";
         private string searchNotSelectedText = string.Empty;
-        
+        private string searchSelectedText = string.Empty;
+
 
         protected override void OnInitialized()
         {
@@ -30,10 +32,18 @@ namespace BlazorMultipleSelect.Pages
             notSelectedDisplay = notSelected;
         }
 
-        private void SearchTheOptions(ChangeEventArgs e)
+        //TODO: search uppr and lower case
+        private void SearchNotSelected(ChangeEventArgs e)
         {
             searchNotSelectedText = (string)e.Value;
-            notSelectedDisplay = notSelected.Where(ns => ns.Value.Contains(searchNotSelectedText)).ToList();
+            notSelectedDisplay = notSelected.Where(ns => ns.Value.Contains(searchNotSelectedText, StringComparison.OrdinalIgnoreCase)).ToList();
+            StateHasChanged();
+        }
+
+        private void SearchSelected(ChangeEventArgs e)
+        {
+            searchSelectedText = (string)e.Value;
+            selectedDisplay = Selected.Where(ns => ns.Value.Contains(searchSelectedText, StringComparison.OrdinalIgnoreCase)).ToList();
             StateHasChanged();
         }
 
@@ -41,25 +51,31 @@ namespace BlazorMultipleSelect.Pages
         {
             notSelected.Remove(option);
             Selected.Add(option);
+
             notSelectedDisplay = notSelected;
+            selectedDisplay = Selected;
         }
 
         private void Deselect(DualSelectOption option)
         {
             Selected.Remove(option);
             notSelected.Add(option);
+
             notSelectedDisplay = notSelected;
+            selectedDisplay = Selected;
         }
 
         private void SelectAll()
         {
             Selected.AddRange(notSelected);
+            selectedDisplay = Selected;
             notSelected.Clear();
         }
 
         private void DeselectAll()
         {
             notSelected.AddRange(Selected);
+            notSelectedDisplay = notSelected;
             Selected.Clear();
         }
 
