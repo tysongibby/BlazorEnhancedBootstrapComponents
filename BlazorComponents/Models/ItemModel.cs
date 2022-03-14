@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BlazorMultipleSelect.Models
+namespace BlazorComponents.Models
 {
     public class ItemModel
     {

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BlazorMultipleSelect.Pages
+namespace BlazorComponents.Pages
 {
     /// <summary>
     /// Dual Multiple select Blazor component. Holds non-selected options in the left select element and selected options in the right select element. 

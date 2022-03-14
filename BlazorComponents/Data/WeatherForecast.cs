@@ -1,6 +1,6 @@
 using System;
 
-namespace BlazorMultipleSelect.Data
+namespace BlazorComponents.Data
 {
     public class WeatherForecast
     {

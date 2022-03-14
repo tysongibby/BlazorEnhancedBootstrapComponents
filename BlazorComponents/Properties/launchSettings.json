@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "BlazorMultipleSelect": {
+    "BlazorComponents": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,

@@ -1,4 +1,4 @@
-using BlazorMultipleSelect.Data;
+using BlazorComponents.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Hosting;
@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BlazorMultipleSelect
+namespace BlazorComponents
 {
     public class Startup
     {

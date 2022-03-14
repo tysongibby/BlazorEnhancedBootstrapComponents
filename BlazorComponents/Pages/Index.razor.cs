@@ -1,13 +1,13 @@
-﻿using BlazorMultipleSelect.Models;
+﻿using BlazorComponents.Models;
 using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using static BlazorMultipleSelect.Pages.DualSelect;
-using static BlazorMultipleSelect.Pages.SingleSelect;
+using static BlazorComponents.Pages.DualSelect;
+using static BlazorComponents.Pages.SingleSelect;
 
-namespace BlazorMultipleSelect.Pages
+namespace BlazorComponents.Pages
 {    
     public partial class Index
     {
