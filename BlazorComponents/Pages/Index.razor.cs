@@ -31,7 +31,7 @@ namespace BlazorComponents.Pages
         private void SubmitDualSelect()
         {
             resultList = new List<DualSelectOption> { };
-            resultList = dualSelect.Selected;
+            resultList = dualSelect.SelectedOptions;
         }
 
         SingleSelect singleSelect;

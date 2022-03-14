@@ -1,7 +1,6 @@
 ﻿<div class="container">
     <div class="row">
         <div class="col-6">
-            @*Put title here*@
             <div class="row">
                 <div class="col-6">
                     <div class="mb-1">
@@ -14,12 +13,12 @@
                         }
                     </select>
                     <div class="p-1">
-                        <button type="button" class="btn btn-outline-primary d-flex float-right" @onclick="SelectAll">Select all >></button>
+                        <button type="button" class="btn btn-outline-secondary px-2 py-0 w-100 d-flex float-right" @onclick="SelectAll">Select all >></button>
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="mb-1">
-                        <input id="search" class="form-control" placeholder="Search chosen..." autocomplete="off" @bind-value="searchSelectedText" @oninput="SearchSelected" />
+                        <input id="search" class="form-control" placeholder="Search selected..." autocomplete="off" @bind-value="searchSelectedText" @oninput="SearchSelected" />
                     </div>
                     <select id="Selected" class="form-control border" multiple="multiple" size="@BoxHeight">
                         @foreach (var option in selectedDisplay)
@@ -28,7 +27,7 @@
                         }
                     </select>
                     <div class="p-1 align-content-end">
-                        <button type="button" class="btn btn-outline-primary" @onclick="DeselectAll">@removeAllText Remove all</button>
+                        <button type="button" class="btn btn-outline-secondary px-2 py-0 w-100" @onclick="DeselectAll">@removeAllText Remove all</button>
                     </div>
                 </div>
             </div>

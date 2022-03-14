@@ -7,16 +7,29 @@ using System.Threading.Tasks;
 namespace BlazorComponents.Pages
 {
     /// <summary>
-    /// Dual Multiple select Blazor component. Holds non-selected options in the left select element and selected options in the right select element. 
-    /// Set Options by creating a List of DualSelectOptions: List<DualSelectOption>{ DualSelectOption { Id = int, Value = string } }
-    /// Retrieve "Selected" by using "@ref=" in component tag to get resulting list of DualSelectOptions. 
+    /// Dual Multiple select Blazor component. Holds options available to select in the left select element and selected options in the right select element. 
+    /// Set "AvailableOptions" by creating a List of DualSelectOptions: List<DualSelectOption>{ DualSelectOption { Id = int, Value = string } }
+    /// "SelectedOptions" retrieves the resulting list of DualSelectOptions that have been selected by the user.
+    /// "BoxHeight" allows configuration of the row height of the text box of the multiple select elements.
     /// </summary>
     public partial class DualSelect
     {
+        /// <summary>
+        /// List of options availble to use for selection.
+        /// </summary>
+        [Parameter]       
+        public List<DualSelectOption> AvailableOptions { get; set; } = new List<DualSelectOption>(); 
+        /// <summary>
+        /// List of options selected by the user.
+        /// </summary>
         [Parameter]
-        public List<DualSelectOption> Options { get; set; } = new List<DualSelectOption>();        
-        public List<DualSelectOption> Selected { get; set; } = new List<DualSelectOption>();
+        public List<DualSelectOption> SelectedOptions { get; set; } = new List<DualSelectOption>();
+        /// <summary>
+        /// Row height of the text boxes for the multiple select elements.
+        /// </summary>
+        [Parameter]
         public int BoxHeight { get; set; } = 5;
+
         public class DualSelectOption
         {
             public int Id { get; set; }
@@ -33,7 +46,7 @@ namespace BlazorComponents.Pages
 
         protected override void OnInitialized()
         {
-            notSelected = Options;
+            notSelected = AvailableOptions;
             notSelectedDisplay = notSelected;
         }
         
@@ -47,7 +60,7 @@ namespace BlazorComponents.Pages
         private void SearchSelected(ChangeEventArgs e)
         {
             searchSelectedText = (string)e.Value;
-            selectedDisplay = Selected.Where(ns => ns.Value.Contains(searchSelectedText, StringComparison.OrdinalIgnoreCase)).ToList();
+            selectedDisplay = SelectedOptions.Where(ns => ns.Value.Contains(searchSelectedText, StringComparison.OrdinalIgnoreCase)).ToList();
             //StateHasChanged();
         }
 
@@ -55,11 +68,11 @@ namespace BlazorComponents.Pages
         {
             // update lists
             notSelected.Remove(option);
-            Selected.Add(option);
+            SelectedOptions.Add(option);
 
             // set display text
             notSelectedDisplay = notSelected;
-            selectedDisplay = Selected;
+            selectedDisplay = SelectedOptions;
 
             // clear search fields (not working as these are unbound fields)
             searchNotSelectedText = string.Empty;
@@ -69,12 +82,12 @@ namespace BlazorComponents.Pages
         private void Deselect(DualSelectOption option)
         {
             // update lists
-            Selected.Remove(option);
+            SelectedOptions.Remove(option);
             notSelected.Add(option);
 
             // set display text
             notSelectedDisplay = notSelected;
-            selectedDisplay = Selected;
+            selectedDisplay = SelectedOptions;
 
             // clear search fields (not working as these are unbound fields)
             searchNotSelectedText = string.Empty;
@@ -84,11 +97,11 @@ namespace BlazorComponents.Pages
         private void SelectAll()
         {
             // update lists
-            Selected.AddRange(notSelected);            
+            SelectedOptions.AddRange(notSelected);            
             notSelected.Clear();
 
             // set display text
-            selectedDisplay = Selected;
+            selectedDisplay = SelectedOptions;
             notSelectedDisplay = notSelected;
 
             // clear search fields (not working as these are unbound fields)
@@ -99,12 +112,12 @@ namespace BlazorComponents.Pages
         private void DeselectAll()
         {
             // update lists
-            notSelected.AddRange(Selected);            
-            Selected.Clear();
+            notSelected.AddRange(SelectedOptions);            
+            SelectedOptions.Clear();
 
             // set display text
             notSelectedDisplay = notSelected;
-            selectedDisplay = Selected;
+            selectedDisplay = SelectedOptions;
 
             // clear search fields (not working as these are unbound fields)
             searchNotSelectedText = string.Empty;
