@@ -54,14 +54,12 @@ namespace BlazorComponents.Pages
         {
             searchNotSelectedText = (string)e.Value;
             notSelectedDisplay = notSelected.Where(ns => ns.Value.Contains(searchNotSelectedText, StringComparison.OrdinalIgnoreCase)).ToList();
-            //StateHasChanged();
         }
 
         private void SearchSelected(ChangeEventArgs e)
         {
             searchSelectedText = (string)e.Value;
             selectedDisplay = SelectedOptions.Where(ns => ns.Value.Contains(searchSelectedText, StringComparison.OrdinalIgnoreCase)).ToList();
-            //StateHasChanged();
         }
 
         private void Select(DualSelectOption option)
