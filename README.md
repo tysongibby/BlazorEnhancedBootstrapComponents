@@ -1,5 +1,5 @@
-# Blazor Components
-Basic bootstrap elements combined or modified to proved common UX funtionality not included in bootstrap. Anything that changes the basic appearance of bootstrap is avoided to provide a more seamless user experience.
+# Blazor Enhanced Bootstrap Components
+Basic bootstrap elements combined or modified to improve common UX funtionality not included in bootstrap. Anything that changes the basic appearance of bootstrap is avoided to provide a more consitent user experience.
 
 Components so far:
 
