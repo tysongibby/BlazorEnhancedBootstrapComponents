@@ -12,7 +12,7 @@ namespace BlazorComponents.Pages
     /// "SelectedOptions" retrieves the resulting list of DualSelectOptions that have been selected by the user.
     /// "BoxHeight" allows configuration of the row height of the text box of the multiple select elements.
     /// </summary>
-    public partial class DualSelect
+    public partial class EDualSelect
     {
         /// <summary>
         /// List of options availble to use for selection.

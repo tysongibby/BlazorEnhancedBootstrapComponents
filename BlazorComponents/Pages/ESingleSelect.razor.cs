@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BlazorComponents.Pages
 {
-    public partial class SingleSelect
+    public partial class ESingleSelect
     {
         [Parameter]
         public List<SingleSelectOption> Options { get; set; } = new List<SingleSelectOption>();

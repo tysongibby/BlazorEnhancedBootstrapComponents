@@ -1,10 +1,10 @@
 ﻿@page "/"
-@using static BlazorComponents.Pages.DualSelect
+@using static BlazorComponents.Pages.EDualSelect
 
 
 <h3>Dual Select Example</h3>
 <h5 class="mt-2">Make your selection</h5>
-<DualSelect @ref="dualSelect" AvailableOptions="DualSelectOptions"></DualSelect>
+<EDualSelect @ref="dualSelect" AvailableOptions="DualSelectOptions"></EDualSelect>
 <button class="btn btn-primary mt-2" type="button" @onclick="SubmitDualSelect">Submit Dual</button>
 
 <h5 class="mt-2">The following were selected:</h5>
@@ -18,7 +18,7 @@
 
 <h3 class="mt-5">Single Select Example</h3>
 <h5 class="mt-2">Make your selection</h5>
-<SingleSelect @ref="singleSelect" Options="SingleSelectOptions"></SingleSelect>
+<ESingleSelect @ref="singleSelect" Options="SingleSelectOptions"></ESingleSelect>
 <button class="btn btn-primary mt-2" type="button" @onclick="SubmitSingleSelect">Submit Single</button>
 
 <h5 class="mt-2">The following was selected:</h5>

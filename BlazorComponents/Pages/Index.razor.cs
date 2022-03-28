@@ -4,14 +4,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using static BlazorComponents.Pages.DualSelect;
-using static BlazorComponents.Pages.SingleSelect;
+using static BlazorComponents.Pages.EDualSelect;
+using static BlazorComponents.Pages.ESingleSelect;
 
 namespace BlazorComponents.Pages
 {    
     public partial class Index
     {
-        DualSelect dualSelect;
+        EDualSelect dualSelect;
         List<DualSelectOption> resultList = new List<DualSelectOption>();
         List<DualSelectOption> DualSelectOptions = new List<DualSelectOption>
         {
@@ -34,7 +34,7 @@ namespace BlazorComponents.Pages
             resultList = dualSelect.SelectedOptions;
         }
 
-        SingleSelect singleSelect;
+        ESingleSelect singleSelect;
         string singleSelectResult;
         List<SingleSelectOption> SingleSelectOptions = new List<SingleSelectOption>
         {
