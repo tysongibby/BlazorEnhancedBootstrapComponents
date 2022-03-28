@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace BlazorComponents.Pages
 {
-    public partial class ESingleSelect
+    public partial class ESelect
     {
         [Parameter]
-        public List<SingleSelectOption> Options { get; set; } = new List<SingleSelectOption>();
-        public SingleSelectOption SelectedOption { get; set; } = new SingleSelectOption { Id = 0, Value = " " };
+        public List<SelectOption> Options { get; set; } = new List<SelectOption>();
+        public SelectOption SelectedOption { get; set; } = new SelectOption { Id = 0, Value = " " };
 
         private int boxSize = 5;
 
-        private void Select(SingleSelectOption option)
+        private void Select(SelectOption option)
         {
             SelectedOption = option;
         }
 
-        public class SingleSelectOption
+        public class SelectOption
         {
             public int Id { get; set; }
             public string Value { get; set; }

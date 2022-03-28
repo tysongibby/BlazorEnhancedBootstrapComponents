@@ -1,18 +1,20 @@
 ﻿using BlazorComponents.Models;
+using BlazorComponents.Pages.PageModels;
 using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using static BlazorComponents.Pages.EDualSelect;
-using static BlazorComponents.Pages.ESingleSelect;
+using static BlazorComponents.Pages.ESelect;
 
 namespace BlazorComponents.Pages
 {    
     public partial class Index
     {
-        EDualSelect dualSelect;
-        List<DualSelectOption> resultList = new List<DualSelectOption>();
+        // ** DUAL SELECT **
+        private EDualSelect dualSelect;
+        private List<DualSelectOption> resultList = new List<DualSelectOption>();
         List<DualSelectOption> DualSelectOptions = new List<DualSelectOption>
         {
             new DualSelectOption{ Id=1, Value="One"},
@@ -34,28 +36,41 @@ namespace BlazorComponents.Pages
             resultList = dualSelect.SelectedOptions;
         }
 
-        ESingleSelect singleSelect;
-        string singleSelectResult;
-        List<SingleSelectOption> SingleSelectOptions = new List<SingleSelectOption>
+
+
+        // ** SELECT
+        private ESelect eSelect;
+        private string SelectResult;
+        List<SelectOption> SelectOptions = new List<SelectOption>
         {
-            new SingleSelectOption{ Id=1, Value="One"},
-            new SingleSelectOption{ Id=2, Value="Two"},
-            new SingleSelectOption{ Id=3, Value="Three"},
-            new SingleSelectOption{ Id=4, Value="Four"},
-            new SingleSelectOption{ Id=5, Value="Five"},
-            new SingleSelectOption{ Id=6, Value="Six"},
-            new SingleSelectOption{ Id=7, Value="Seven"},
-            new SingleSelectOption{ Id=8, Value="Eight"},
-            new SingleSelectOption{ Id=9, Value="Nine"},
-            new SingleSelectOption{ Id=10, Value="Ten"},
-            new SingleSelectOption{ Id=11, Value="Eleven"},
+            new SelectOption{ Id=1, Value="One"},
+            new SelectOption{ Id=2, Value="Two"},
+            new SelectOption{ Id=3, Value="Three"},
+            new SelectOption{ Id=4, Value="Four"},
+            new SelectOption{ Id=5, Value="Five"},
+            new SelectOption{ Id=6, Value="Six"},
+            new SelectOption{ Id=7, Value="Seven"},
+            new SelectOption{ Id=8, Value="Eight"},
+            new SelectOption{ Id=9, Value="Nine"},
+            new SelectOption{ Id=10, Value="Ten"},
+            new SelectOption{ Id=11, Value="Eleven"},
         };
 
-
-        private void SubmitSingleSelect()
+        private void SubmitSelect()
         {
-            singleSelectResult = singleSelect.SelectedOption.Value;
+            SelectResult = eSelect.SelectedOption.Value;
         }
+
+
+        // ** INPUT TYPE="TEXT" **
+        public IndexFormModel Form { get; set; } = new IndexFormModel();
+        private string firstName = string.Empty;
+
+        public void ValidFormSubmit()
+        {
+            firstName = Form.FirstName;
+        }
+
 
     }
 }

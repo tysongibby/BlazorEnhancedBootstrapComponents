@@ -2,10 +2,10 @@
 @using static BlazorComponents.Pages.EDualSelect
 
 
-<h3>Dual Select Example</h3>
+<h3>Enhanced Dual Select Example</h3>
 <h5 class="mt-2">Make your selection</h5>
 <EDualSelect @ref="dualSelect" AvailableOptions="DualSelectOptions"></EDualSelect>
-<button class="btn btn-primary mt-2" type="button" @onclick="SubmitDualSelect">Submit Dual</button>
+<button class="btn btn-primary mt-2" type="button" @onclick="SubmitDualSelect">Submit EDualSelect</button>
 
 <h5 class="mt-2">The following were selected:</h5>
 <ul>
@@ -16,12 +16,30 @@
 
 </ul>
 
-<h3 class="mt-5">Single Select Example</h3>
+<h3 class="mt-5">Enhanced Select Example</h3>
 <h5 class="mt-2">Make your selection</h5>
-<ESingleSelect @ref="singleSelect" Options="SingleSelectOptions"></ESingleSelect>
-<button class="btn btn-primary mt-2" type="button" @onclick="SubmitSingleSelect">Submit Single</button>
+<ESelect @ref="eSelect" Options="SelectOptions"></ESelect>
+<button class="btn btn-primary mt-2" type="button" @onclick="SubmitSelect">Submit ESelect</button>
 
 <h5 class="mt-2">The following was selected:</h5>
-<p>@singleSelectResult</p>
+<p>@SelectResult</p>
 
+<EditForm Model="Form" OnValidSubmit="ValidFormSubmit" class="mt-5">
+<DataAnnotationsValidator />
+<h3>Form Example:</h3>
+<ValidationSummary />
 
+    <h3 class="mt-2">Enhanced Input Text</h3>
+    <EInputText Label="First Name" @bind-Value="Form.FirstName" ValidationFor="@( () => Form.FirstName)" />
+    <button class="btn btn-primary mt-2" type="submit">Submit EInputText</button>
+    <h5 class="mt-2">The first name entered is:</h5>
+    <p>@firstName</p>
+    
+    <h3 class="mt-2">Enhanced Input Text - floating label</h3>
+    <EInputText Label="First Name" @bind-Value="Form.FirstName" ValidationFor="@( () => Form.FirstName)" FloatingLabel="true" />
+    <button class="btn btn-primary mt-2" type="submit">Submit EInputText</button>
+    <h5 class="mt-2">The first name entered is:</h5>
+    <p>@firstName</p>
+    
+
+</EditForm>
