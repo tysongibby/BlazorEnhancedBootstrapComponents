@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using System.Linq.Expressions;
 
-namespace BlazorComponents.Pages
+namespace BebComponents
 {
     public partial class EInputText
     {

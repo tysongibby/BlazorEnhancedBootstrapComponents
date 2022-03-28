@@ -1,5 +1,6 @@
 ﻿@page "/"
-@using static BlazorComponents.Pages.EDualSelect
+@using BebComponents
+@using static BebComponents.EDualSelect
 
 
 <h3>Enhanced Dual Select Example</h3>
@@ -18,7 +19,7 @@
 
 <h3 class="mt-5">Enhanced Select Example</h3>
 <h5 class="mt-2">Make your selection</h5>
-<ESelect @ref="eSelect" Options="SelectOptions"></ESelect>
+<ESingleSelect @ref="eSingleSelect" Options="SelectOptions"></ESingleSelect>
 <button class="btn btn-primary mt-2" type="button" @onclick="SubmitSelect">Submit ESelect</button>
 
 <h5 class="mt-2">The following was selected:</h5>

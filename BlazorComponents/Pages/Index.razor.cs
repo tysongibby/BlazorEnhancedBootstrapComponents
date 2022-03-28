@@ -1,12 +1,7 @@
-﻿using BlazorComponents.Models;
-using BlazorComponents.Pages.PageModels;
-using Microsoft.AspNetCore.Components;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using static BlazorComponents.Pages.EDualSelect;
-using static BlazorComponents.Pages.ESelect;
+﻿using BlazorComponents.Pages.PageModels;
+using BebComponents;
+using static BebComponents.EDualSelect;
+using static BebComponents.ESingleSelect;
 
 namespace BlazorComponents.Pages
 {    
@@ -39,7 +34,7 @@ namespace BlazorComponents.Pages
 
 
         // ** SELECT
-        private ESelect eSelect;
+        private ESingleSelect eSingleSelect;
         private string SelectResult;
         List<SelectOption> SelectOptions = new List<SelectOption>
         {
@@ -58,7 +53,7 @@ namespace BlazorComponents.Pages
 
         private void SubmitSelect()
         {
-            SelectResult = eSelect.SelectedOption.Value;
+            SelectResult = eSingleSelect.SelectedOption.Value;
         }
 
 

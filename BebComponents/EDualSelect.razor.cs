@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BlazorComponents.Pages
+namespace BebComponents
 {
     /// <summary>
     /// Dual Multiple select Blazor component. Holds options available to select in the left select element and selected options in the right select element. 
