@@ -12,7 +12,7 @@
             <option disabled></option>
             @foreach(SelectOption option in Options)
             {
-                <option id=@option.Id @onclick="( () => OnClick(option) )" >@option.Value</option>
+                <option id=@option.Id @onclick="( () => OnClickInternal(option) )" >@option.Value</option>
             }
         </select>
         <div class="form-control-validation">
@@ -23,11 +23,11 @@
 else
 {
     <div class="form-floating">
-        <select class="form-control form-select @CssClass" id="@Id" @bind="@CurrentValue" >
+        <select class="form-control form-select @CssClass" id="@Id" @bind="@CurrentValue"  >
             <option disabled selected></option>
             @foreach(SelectOption option in Options)
             {
-                <option id=@option.Id @onclick="( () => OnClick(option) )">@option.Value</option>
+                <option id=@option.Id onclick="@( () => OnClickInternal(option) )">@option.Value</option>
             }
         </select>
         @if (!string.IsNullOrWhiteSpace(Label))

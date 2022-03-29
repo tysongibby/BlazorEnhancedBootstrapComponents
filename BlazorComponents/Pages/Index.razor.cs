@@ -91,5 +91,34 @@ namespace BlazorComponents.Pages
             eSelectResult = eSelect.SelectedOption.Value;
         }
 
+        // ** SELECT2
+        private bool enhancedSelect2 = false;
+        private ESelect eSelect2;
+        private string eSelectResult2;
+        private readonly List<SelectOption> options2 = new List<SelectOption>
+        {
+            new SelectOption { Id = 1, Value = "Bo Jangles" },
+            new SelectOption { Id = 2, Value = "Dumbleydorey" },
+            new SelectOption { Id = 3, Value = "Bilbo" },
+            new SelectOption { Id = 4, Value = "Frodo" },
+            new SelectOption { Id = 5, Value = "Rad Karl" },
+            new SelectOption { Id = 6, Value = "Grumpy Daryl" },
+            new SelectOption { Id = 7, Value = "Calvey" },
+            new SelectOption { Id = 8, Value = "Honey Cakes" },
+            new SelectOption { Id = 8, Value = "Wonder Muffin" }
+        };
+
+        private void EnableEnhancedSelect2()
+        {
+            enhancedSelect2 = true;
+        }
+
+        private void SubmitESelect2()
+        {
+            eSelectResult2 = eSelect2.SelectedOption.Value;
+        }
+
+
+
     }
 }

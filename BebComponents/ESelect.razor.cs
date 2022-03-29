@@ -17,7 +17,9 @@ namespace BebComponents
         [Parameter]
         public List<SelectOption> Options { get; set; }
         [Parameter]
-        public SelectOption SelectedOption { get; set; }
+        public SelectOption? SelectedOption { get; set; }
+        [Parameter]
+        public Action? OnClick { get; set; }
 
         protected override bool TryParseValueFromString(string? value, out string result, out string validationErrorMessage)
         {
@@ -26,9 +28,10 @@ namespace BebComponents
             return true;
         }
 
-        public void OnClick(SelectOption option)
+        public void OnClickInternal(SelectOption option)
         {
             SelectedOption = option;
+            OnClick?.Invoke();
         }
     }
 }
