@@ -7,5 +7,7 @@ namespace BlazorComponents.Pages.PageModels
         [Required]
         [Display(Name ="First Name")]
         public string FirstName { get; set; }
+
+        public string LastName { get; set; }
     }
 }

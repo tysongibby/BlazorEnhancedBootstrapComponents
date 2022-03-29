@@ -1,16 +1,17 @@
 ﻿@page "/"
 @using BebComponents
+@using BebComponents.DataModels
 @using static BebComponents.EDualSelect
 
 
 <h3>Enhanced Dual Select Example</h3>
 <h5 class="mt-2">Make your selection</h5>
 <EDualSelect @ref="dualSelect" AvailableOptions="DualSelectOptions"></EDualSelect>
-<button class="btn btn-primary mt-2" type="button" @onclick="SubmitDualSelect">Submit EDualSelect</button>
+<button class="btn btn-primary mt-2" type="button" @onclick="SubmitEDualSelect">Submit EDualSelect</button>
 
 <h5 class="mt-2">The following were selected:</h5>
 <ul>
-    @foreach (DualSelectOption option in resultList)
+    @foreach (SelectOption option in resultList)
     {
         <li id="@option.Id">@option.Value</li>
     }
@@ -19,11 +20,11 @@
 
 <h3 class="mt-5">Enhanced Select Example</h3>
 <h5 class="mt-2">Make your selection</h5>
-<ESingleSelect @ref="eSingleSelect" Options="SelectOptions"></ESingleSelect>
-<button class="btn btn-primary mt-2" type="button" @onclick="SubmitSelect">Submit ESelect</button>
+<ESingleSelect @ref="eSingleSelect" Options="singleSelectOptions"></ESingleSelect>
+<button class="btn btn-primary mt-2" type="button" @onclick="SubmitESingleSelect">Submit ESelect</button>
 
 <h5 class="mt-2">The following was selected:</h5>
-<p>@SelectResult</p>
+<p>@eSingleSelectResult</p>
 
 <EditForm Model="Form" OnValidSubmit="ValidFormSubmit" class="mt-5">
 <DataAnnotationsValidator />
@@ -31,16 +32,21 @@
 <ValidationSummary />
 
     <h3 class="mt-2">Enhanced Input Text</h3>
-    <EInputText Label="First Name" @bind-Value="Form.FirstName" ValidationFor="@( () => Form.FirstName)" />
+    <EInputText Id="EInputText" Label="First Name" @bind-Value="Form.FirstName" ValidationFor="@( () => Form.FirstName)" />
     <button class="btn btn-primary mt-2" type="submit">Submit EInputText</button>
     <h5 class="mt-2">The first name entered is:</h5>
     <p>@firstName</p>
     
     <h3 class="mt-2">Enhanced Input Text - floating label</h3>
-    <EInputText Label="First Name" @bind-Value="Form.FirstName" ValidationFor="@( () => Form.FirstName)" FloatingLabel="true" />
+    <EInputText Id="EInputText2" Label="First Name" @bind-Value="Form.FirstName" ValidationFor="@( () => Form.FirstName)" FloatingLabel="true" />
     <button class="btn btn-primary mt-2" type="submit">Submit EInputText</button>
     <h5 class="mt-2">The first name entered is:</h5>
     <p>@firstName</p>
     
+    <h3 class="mt-4">Enhanced Select</h3>
+    <ESelect Id="ESelect" @ref="eSelect" @bind-Value="Form.LastName" Options="@options" ValidationFor="@( () => Form.LastName )" Label="Last Name" FloatingLabel="true" />
+    <h5>The last name selected is:</h5>
+    <p>@Form.LastName</p>
+
 
 </EditForm>

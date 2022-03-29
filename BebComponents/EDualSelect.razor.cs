@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using BebComponents.DataModels;
+using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace BebComponents
     /// <summary>
     /// Dual Multiple select Blazor component. Holds options available to select in the left select element and selected options in the right select element. 
     /// Set "AvailableOptions" by creating a List of DualSelectOptions: List<DualSelectOption>{ DualSelectOption { Id = int, Value = string } }
-    /// "SelectedOptions" retrieves the resulting list of DualSelectOptions that have been selected by the user.
+    /// "SelectedOptions" retrieves the resulting list of DualSelectOptions that have been selected by the user. Returned via @ref= .
     /// "BoxHeight" allows configuration of the row height of the text box of the multiple select elements.
     /// </summary>
     public partial class EDualSelect
@@ -18,27 +19,21 @@ namespace BebComponents
         /// List of options availble to use for selection.
         /// </summary>
         [Parameter]       
-        public List<DualSelectOption> AvailableOptions { get; set; } = new List<DualSelectOption>(); 
+        public List<SelectOption> AvailableOptions { get; set; } = new List<SelectOption>(); 
         /// <summary>
-        /// List of options selected by the user.
+        /// List of options selected by the user. Returned via @ref= .
         /// </summary>
         [Parameter]
-        public List<DualSelectOption> SelectedOptions { get; set; } = new List<DualSelectOption>();
+        public List<SelectOption> SelectedOptions { get; set; } = new List<SelectOption>();
         /// <summary>
         /// Row height of the text boxes for the multiple select elements.
         /// </summary>
         [Parameter]
         public int BoxHeight { get; set; } = 5;
 
-        public class DualSelectOption
-        {
-            public int Id { get; set; }
-            public string Value { get; set; }
-        }
-
-        private List<DualSelectOption> notSelected = new List<DualSelectOption>();
-        private List<DualSelectOption> notSelectedDisplay = new List<DualSelectOption>();
-        private List<DualSelectOption> selectedDisplay = new List<DualSelectOption>();
+        private List<SelectOption> notSelected = new List<SelectOption>();
+        private List<SelectOption> notSelectedDisplay = new List<SelectOption>();
+        private List<SelectOption> selectedDisplay = new List<SelectOption>();
         private readonly string removeAllText = "<<";
         private string searchNotSelectedText = string.Empty;
         private string searchSelectedText = string.Empty;
@@ -62,7 +57,7 @@ namespace BebComponents
             selectedDisplay = SelectedOptions.Where(ns => ns.Value.Contains(searchSelectedText, StringComparison.OrdinalIgnoreCase)).ToList();
         }
 
-        private void Select(DualSelectOption option)
+        private void Select(SelectOption option)
         {
             // update lists
             notSelected.Remove(option);
@@ -77,7 +72,7 @@ namespace BebComponents
             searchSelectedText = string.Empty;
         }
 
-        private void Deselect(DualSelectOption option)
+        private void Deselect(SelectOption option)
         {
             // update lists
             SelectedOptions.Remove(option);
