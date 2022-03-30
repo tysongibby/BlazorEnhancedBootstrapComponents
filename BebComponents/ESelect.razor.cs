@@ -1,5 +1,6 @@
 ﻿using BebComponents.DataModels;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Forms;
 using System.Linq.Expressions;
 
 namespace BebComponents
@@ -19,19 +20,20 @@ namespace BebComponents
         [Parameter]
         public SelectOption? SelectedOption { get; set; }
         [Parameter]
-        public Action? OnClick { get; set; }
+        public Action? Trigger { get; set; }
 
         protected override bool TryParseValueFromString(string? value, out string result, out string validationErrorMessage)
-        {
-            result = value;
+        {            
+            result = value; 
             validationErrorMessage = null;
             return true;
         }
 
-        public void OnClickInternal(SelectOption option)
+        public void OnClick(SelectOption option)
         {
-            SelectedOption = option;
-            OnClick?.Invoke();
+            SelectedOption = option;            
+            Trigger?.Invoke();
         }
+
     }
 }

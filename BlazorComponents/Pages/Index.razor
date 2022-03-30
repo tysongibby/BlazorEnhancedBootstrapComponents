@@ -45,16 +45,16 @@
     
     <h3 class="mt-4">Enhanced Select</h3>
     <ESelect Id="ESelect" @ref="eSelect" @bind-Value="Form.LastName" Options="@options" ValidationFor="@( () => Form.LastName )" 
-        Label="Last Name" FloatingLabel="true" OnClick="EnableEnhancedSelect2"/>
-    <h5>The last name selected is:</h5>
+        Label="Last Name" FloatingLabel="true" Trigger="EnableEnhancedSelect2"/>
+    <h5 class="mt-2">The last name selected is:</h5>
     <p>@Form.LastName</p>
 
     @if(enhancedSelect2 == true) 
     {
         <h3 class="mt-4">Enhanced Select2</h3>
-        <ESelect Id="ESelect2" @ref="eSelect2" @bind-Value="Form.PreferredName" Options="@options2" ValidationFor="@( () => Form.LastName )" Label="Last Name" />
-        <h5>The last name selected is:</h5>
-        <p>@Form.LastName</p>
+        <ESelect Id="ESelect2" @ref="eSelect2" @bind-Value="Form.PreferredName" Options="@options2" ValidationFor="@( () => Form.PreferredName )" Label="Preferred Name" />
+        <h5>The preferred name selected is:</h5>
+        <p>@Form.PreferredName</p>
     }
 
 
