@@ -16,11 +16,21 @@ namespace BebComponents
         [Parameter]
         public bool? FloatingLabel { get; set; } = false;
         [Parameter]
-        public List<SelectOption> Options { get; set; }
+        public List<SelectOption>? Options { get; set; }
         [Parameter]
         public SelectOption? SelectedOption { get; set; }
         [Parameter]
         public Action? Trigger { get; set; }
+        [Parameter]
+        public new string CurrentValue
+        {
+            get => base.CurrentValue;
+            set
+            {
+                base.CurrentValue = value;
+                Trigger?.Invoke();
+            }
+        }      
 
         protected override bool TryParseValueFromString(string? value, out string result, out string validationErrorMessage)
         {            
@@ -29,11 +39,13 @@ namespace BebComponents
             return true;
         }
 
-        public void OnClick(SelectOption option)
-        {
-            SelectedOption = option;            
-            Trigger?.Invoke();
-        }
+        //public void OnClick(SelectOption option)
+        //{
+        //    SelectedOption = option;            
+        //    Trigger?.Invoke();
+        //}
+
+       
 
     }
 }
