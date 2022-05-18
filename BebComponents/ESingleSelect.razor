@@ -1,7 +1,7 @@
 ﻿<div class="container">
     <div class="row">
         <div class="col-3">
-            <select id="NotSelected" class="form-control border" multiple="multiple" size="@boxSize" style="width: 200px">
+            <select id="NotSelected" class="form-control border" multiple="multiple" size="@BoxHieght" style="width:@BoxWidth">
                 @foreach (var option in Options)
                 {
                     <option @onclick="@(() => Select(option))" value="@option.Value">@option.Text</option>
@@ -10,4 +10,6 @@
         </div>
     </div>
 </div>
+
+
 

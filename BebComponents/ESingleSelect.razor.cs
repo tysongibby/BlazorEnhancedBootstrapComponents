@@ -10,8 +10,10 @@ namespace BebComponents
         public List<Option> Options { get; set; } = new List<Option>();
         [Parameter]
         public Option SelectedOption { get; set; } = new Option { Text = " ", Value = " " };
-
-        private int boxSize = 5;
+        [Parameter]
+        public int BoxHieght { get; set; } = 5;
+        [Parameter]
+        public string BoxWidth { get; set; } = "auto";
 
         private void Select(Option option)
         {

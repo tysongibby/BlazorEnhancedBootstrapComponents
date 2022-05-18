@@ -4,6 +4,7 @@ using static BebComponents.EDualSelect;
 using static BebComponents.ESingleSelect;
 using static BebComponents.ESelect;
 using BebComponents.DataModels;
+using System.Collections.Generic;
 
 namespace Examples.Pages
 {    
@@ -14,17 +15,17 @@ namespace Examples.Pages
         private List<Option> resultList = new();
         private readonly List<Option> DualSelectOptions = new List<Option>
         {
-            new Option{ Text=1, Value="One"},
-            new Option{ Text=2, Value="Two"},
-            new Option{ Text=3, Value="Three"},
-            new Option{ Text=4, Value="Four"},
-            new Option{ Text=5, Value="Five"},
-            new Option{ Text=6, Value="Six"},
-            new Option{ Text=7, Value="Seven"},
-            new Option{ Text=8, Value="Eight"},
-            new Option{ Text=9, Value="Nine"},
-            new Option{ Text=10, Value="Ten"},
-            new Option{ Text=11, Value="Eleven"},
+            new Option{ Value="1", Text="One"},
+            new Option{ Value="2", Text="Two"},
+            new Option{ Value="3", Text="Three"},
+            new Option{ Value="4", Text="Four"},
+            new Option{ Value="5", Text="Five"},
+            new Option{ Value="6", Text="Six"},
+            new Option{ Value="7", Text="Seven"},
+            new Option{ Value="8", Text="Eight"},
+            new Option{ Value="9", Text="Nine"},
+            new Option{ Value="10", Text="Ten"},
+            new Option{ Value="11", Text="Eleven"},
         };
 
         private void SubmitEDualSelect()
@@ -40,17 +41,17 @@ namespace Examples.Pages
         private string eSingleSelectResult;
         private readonly List<Option> singleSelectOptions = new List<Option>
         {
-            new Option{ Text=1, Value="One"},
-            new Option{ Text=2, Value="Two"},
-            new Option{ Text=3, Value="Three"},
-            new Option{ Text=4, Value="Four"},
-            new Option{ Text=5, Value="Five"},
-            new Option{ Text=6, Value="Six"},
-            new Option{ Text=7, Value="Seven"},
-            new Option{ Text=8, Value="Eight"},
-            new Option{ Text=9, Value="Nine"},
-            new Option{ Text=10, Value="Ten"},
-            new Option{ Text=11, Value="Eleven"},
+            new Option{ Value="1", Text="One"},
+            new Option{ Value="2", Text="Two"},
+            new Option{ Value="3", Text="Three"},
+            new Option{ Value="4", Text="Four"},
+            new Option{ Value="5", Text="Five"},
+            new Option{ Value="6", Text="Six"},
+            new Option{ Value="7", Text="Seven"},
+            new Option{ Value="8", Text="Eight"},
+            new Option{ Value="9", Text="Nine"},
+            new Option{ Value="10", Text="Ten"},
+            new Option{ Value="11", Text="Eleven"},
         };
 
         private void SubmitESingleSelect()
@@ -75,15 +76,15 @@ namespace Examples.Pages
         private string eSelectResult;
         private readonly List<Option> options = new List<Option>
         {            
-            new Option { Text = 1, Value = "Jones" },
-            new Option { Text = 2, Value = "Smith" },
-            new Option { Text = 3, Value = "Bender" },
-            new Option { Text = 4, Value = "Baggio" },
-            new Option { Text = 5, Value = "Allen" },
-            new Option { Text = 6, Value = "Biggs" },
-            new Option { Text = 7, Value = "Randall" },
-            new Option { Text = 8, Value = "Anderson" },
-            new Option { Text = 8, Value = "Reeves" }
+            new Option { Value = "1", Text = "Jones" },
+            new Option { Value = "2", Text = "Smith" },
+            new Option { Value = "3", Text = "Bender" },
+            new Option { Value = "4", Text = "Baggio" },
+            new Option { Value = "5", Text = "Allen" },
+            new Option { Value = "6", Text = "Biggs" },
+            new Option { Value = "7", Text = "Randall" },
+            new Option { Value = "8", Text = "Anderson" },
+            new Option { Value = "9", Text = "Reeves" }
         };
 
         private void SubmitESelect()
@@ -97,15 +98,15 @@ namespace Examples.Pages
         private string eSelectResult2;
         private readonly List<Option> options2 = new List<Option>
         {
-            new Option { Text = 1, Value = "Bo Jangles" },
-            new Option { Text = 2, Value = "Dumbleydorey" },
-            new Option { Text = 3, Value = "Bilbo" },
-            new Option { Text = 4, Value = "Frodo" },
-            new Option { Text = 5, Value = "Rad Karl" },
-            new Option { Text = 6, Value = "Grumpy Daryl" },
-            new Option { Text = 7, Value = "Calvey" },
-            new Option { Text = 8, Value = "Honey Cakes" },
-            new Option { Text = 8, Value = "Wonder Muffin" }
+            new Option { Text = "1", Value = "Bo Jangles" },
+            new Option { Text = "2", Value = "Dumbleydorey" },
+            new Option { Text = "3", Value = "Bilbo" },
+            new Option { Text = "4", Value = "Frodo" },
+            new Option { Text = "5", Value = "Rad Karl" },
+            new Option { Text = "6", Value = "Grumpy Daryl" },
+            new Option { Text = "7", Value = "Calvey" },
+            new Option { Text = "8", Value = "Honey Cakes" },
+            new Option { Text = "9", Value = "Wonder Muffin" }
         };
 
         private void EnableEnhancedSelect2()

@@ -48,13 +48,13 @@ namespace BebComponents
         private void SearchNotSelected(ChangeEventArgs e)
         {
             searchNotSelectedText = (string)e.Value;
-            notSelectedDisplay = notSelected.Where(ns => ns.Value.Contains(searchNotSelectedText, StringComparison.OrdinalIgnoreCase)).ToList();
+            notSelectedDisplay = notSelected.Where(ns => ns.Text.Contains(searchNotSelectedText, StringComparison.OrdinalIgnoreCase)).ToList();
         }
 
         private void SearchSelected(ChangeEventArgs e)
         {
             searchSelectedText = (string)e.Value;
-            selectedDisplay = SelectedOptions.Where(ns => ns.Value.Contains(searchSelectedText, StringComparison.OrdinalIgnoreCase)).ToList();
+            selectedDisplay = SelectedOptions.Where(ns => ns.Text.Contains(searchSelectedText, StringComparison.OrdinalIgnoreCase)).ToList();
         }
 
         private void Select(Option option)
