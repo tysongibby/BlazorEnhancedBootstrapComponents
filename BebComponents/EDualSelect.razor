@@ -9,7 +9,7 @@
                     <select id="NotSelected" class="form-control border" multiple="multiple" size="@BoxHeight">
                         @foreach (var option in notSelectedDisplay)
                         {
-                            <option id="@option.Id" @onclick="@(() => Select(option))">@option.Value</option>
+                            <option @onclick="@(() => Select(option))" value="@option.Value">@option.Text</option>
                         }
                     </select>
                     <div class="p-1">
@@ -23,7 +23,7 @@
                     <select id="Selected" class="form-control border" multiple="multiple" size="@BoxHeight">
                         @foreach (var option in selectedDisplay)
                         {
-                            <option id="@option.Id" @onclick="@(() => Deselect(option))">@option.Value</option>
+                            <option @onclick="@(() => Deselect(option))" value="@option.Value">@option.Text</option>
                         }
                     </select>
                     <div class="p-1 align-content-end">

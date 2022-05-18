@@ -19,21 +19,21 @@ namespace BebComponents
         /// List of options availble to use for selection.
         /// </summary>
         [Parameter]       
-        public List<SelectOption> AvailableOptions { get; set; } = new List<SelectOption>(); 
+        public List<Option> AvailableOptions { get; set; } = new List<Option>(); 
         /// <summary>
         /// List of options selected by the user. Returned via @ref= .
         /// </summary>
         [Parameter]
-        public List<SelectOption> SelectedOptions { get; set; } = new List<SelectOption>();
+        public List<Option> SelectedOptions { get; set; } = new List<Option>();
         /// <summary>
         /// Row height of the text boxes for the multiple select elements.
         /// </summary>
         [Parameter]
         public int BoxHeight { get; set; } = 5;
 
-        private List<SelectOption> notSelected = new List<SelectOption>();
-        private List<SelectOption> notSelectedDisplay = new List<SelectOption>();
-        private List<SelectOption> selectedDisplay = new List<SelectOption>();
+        private List<Option> notSelected = new List<Option>();
+        private List<Option> notSelectedDisplay = new List<Option>();
+        private List<Option> selectedDisplay = new List<Option>();
         private readonly string removeAllText = "<<";
         private string searchNotSelectedText = string.Empty;
         private string searchSelectedText = string.Empty;
@@ -57,7 +57,7 @@ namespace BebComponents
             selectedDisplay = SelectedOptions.Where(ns => ns.Value.Contains(searchSelectedText, StringComparison.OrdinalIgnoreCase)).ToList();
         }
 
-        private void Select(SelectOption option)
+        private void Select(Option option)
         {
             // update lists
             notSelected.Remove(option);
@@ -72,7 +72,7 @@ namespace BebComponents
             searchSelectedText = string.Empty;
         }
 
-        private void Deselect(SelectOption option)
+        private void Deselect(Option option)
         {
             // update lists
             SelectedOptions.Remove(option);

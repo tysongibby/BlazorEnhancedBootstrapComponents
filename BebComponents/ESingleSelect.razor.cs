@@ -7,13 +7,13 @@ namespace BebComponents
     public partial class ESingleSelect
     {
         [Parameter]
-        public List<SelectOption> Options { get; set; } = new List<SelectOption>();
+        public List<Option> Options { get; set; } = new List<Option>();
         [Parameter]
-        public SelectOption SelectedOption { get; set; } = new SelectOption { Id = 0, Value = " " };
+        public Option SelectedOption { get; set; } = new Option { Text = " ", Value = " " };
 
         private int boxSize = 5;
 
-        private void Select(SelectOption option)
+        private void Select(Option option)
         {
             SelectedOption = option;
         }

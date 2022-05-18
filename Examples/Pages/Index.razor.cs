@@ -11,25 +11,25 @@ namespace Examples.Pages
     {
         // ** DUAL SELECT **
         private EDualSelect dualSelect;
-        private List<SelectOption> resultList = new();
-        private readonly List<SelectOption> DualSelectOptions = new List<SelectOption>
+        private List<Option> resultList = new();
+        private readonly List<Option> DualSelectOptions = new List<Option>
         {
-            new SelectOption{ Id=1, Value="One"},
-            new SelectOption{ Id=2, Value="Two"},
-            new SelectOption{ Id=3, Value="Three"},
-            new SelectOption{ Id=4, Value="Four"},
-            new SelectOption{ Id=5, Value="Five"},
-            new SelectOption{ Id=6, Value="Six"},
-            new SelectOption{ Id=7, Value="Seven"},
-            new SelectOption{ Id=8, Value="Eight"},
-            new SelectOption{ Id=9, Value="Nine"},
-            new SelectOption{ Id=10, Value="Ten"},
-            new SelectOption{ Id=11, Value="Eleven"},
+            new Option{ Text=1, Value="One"},
+            new Option{ Text=2, Value="Two"},
+            new Option{ Text=3, Value="Three"},
+            new Option{ Text=4, Value="Four"},
+            new Option{ Text=5, Value="Five"},
+            new Option{ Text=6, Value="Six"},
+            new Option{ Text=7, Value="Seven"},
+            new Option{ Text=8, Value="Eight"},
+            new Option{ Text=9, Value="Nine"},
+            new Option{ Text=10, Value="Ten"},
+            new Option{ Text=11, Value="Eleven"},
         };
 
         private void SubmitEDualSelect()
         {
-            resultList = new List<SelectOption> { };
+            resultList = new List<Option> { };
             resultList = dualSelect.SelectedOptions;
         }
 
@@ -38,19 +38,19 @@ namespace Examples.Pages
         // ** SELECT
         private ESingleSelect eSingleSelect;
         private string eSingleSelectResult;
-        private readonly List<SelectOption> singleSelectOptions = new List<SelectOption>
+        private readonly List<Option> singleSelectOptions = new List<Option>
         {
-            new SelectOption{ Id=1, Value="One"},
-            new SelectOption{ Id=2, Value="Two"},
-            new SelectOption{ Id=3, Value="Three"},
-            new SelectOption{ Id=4, Value="Four"},
-            new SelectOption{ Id=5, Value="Five"},
-            new SelectOption{ Id=6, Value="Six"},
-            new SelectOption{ Id=7, Value="Seven"},
-            new SelectOption{ Id=8, Value="Eight"},
-            new SelectOption{ Id=9, Value="Nine"},
-            new SelectOption{ Id=10, Value="Ten"},
-            new SelectOption{ Id=11, Value="Eleven"},
+            new Option{ Text=1, Value="One"},
+            new Option{ Text=2, Value="Two"},
+            new Option{ Text=3, Value="Three"},
+            new Option{ Text=4, Value="Four"},
+            new Option{ Text=5, Value="Five"},
+            new Option{ Text=6, Value="Six"},
+            new Option{ Text=7, Value="Seven"},
+            new Option{ Text=8, Value="Eight"},
+            new Option{ Text=9, Value="Nine"},
+            new Option{ Text=10, Value="Ten"},
+            new Option{ Text=11, Value="Eleven"},
         };
 
         private void SubmitESingleSelect()
@@ -73,17 +73,17 @@ namespace Examples.Pages
         // ** SELECT
         private ESelect eSelect;
         private string eSelectResult;
-        private readonly List<SelectOption> options = new List<SelectOption>
+        private readonly List<Option> options = new List<Option>
         {            
-            new SelectOption { Id = 1, Value = "Jones" },
-            new SelectOption { Id = 2, Value = "Smith" },
-            new SelectOption { Id = 3, Value = "Bender" },
-            new SelectOption { Id = 4, Value = "Baggio" },
-            new SelectOption { Id = 5, Value = "Allen" },
-            new SelectOption { Id = 6, Value = "Biggs" },
-            new SelectOption { Id = 7, Value = "Randall" },
-            new SelectOption { Id = 8, Value = "Anderson" },
-            new SelectOption { Id = 8, Value = "Reeves" }
+            new Option { Text = 1, Value = "Jones" },
+            new Option { Text = 2, Value = "Smith" },
+            new Option { Text = 3, Value = "Bender" },
+            new Option { Text = 4, Value = "Baggio" },
+            new Option { Text = 5, Value = "Allen" },
+            new Option { Text = 6, Value = "Biggs" },
+            new Option { Text = 7, Value = "Randall" },
+            new Option { Text = 8, Value = "Anderson" },
+            new Option { Text = 8, Value = "Reeves" }
         };
 
         private void SubmitESelect()
@@ -95,17 +95,17 @@ namespace Examples.Pages
         private bool enhancedSelect2 = false;
         private ESelect eSelect2;
         private string eSelectResult2;
-        private readonly List<SelectOption> options2 = new List<SelectOption>
+        private readonly List<Option> options2 = new List<Option>
         {
-            new SelectOption { Id = 1, Value = "Bo Jangles" },
-            new SelectOption { Id = 2, Value = "Dumbleydorey" },
-            new SelectOption { Id = 3, Value = "Bilbo" },
-            new SelectOption { Id = 4, Value = "Frodo" },
-            new SelectOption { Id = 5, Value = "Rad Karl" },
-            new SelectOption { Id = 6, Value = "Grumpy Daryl" },
-            new SelectOption { Id = 7, Value = "Calvey" },
-            new SelectOption { Id = 8, Value = "Honey Cakes" },
-            new SelectOption { Id = 8, Value = "Wonder Muffin" }
+            new Option { Text = 1, Value = "Bo Jangles" },
+            new Option { Text = 2, Value = "Dumbleydorey" },
+            new Option { Text = 3, Value = "Bilbo" },
+            new Option { Text = 4, Value = "Frodo" },
+            new Option { Text = 5, Value = "Rad Karl" },
+            new Option { Text = 6, Value = "Grumpy Daryl" },
+            new Option { Text = 7, Value = "Calvey" },
+            new Option { Text = 8, Value = "Honey Cakes" },
+            new Option { Text = 8, Value = "Wonder Muffin" }
         };
 
         private void EnableEnhancedSelect2()

@@ -10,9 +10,9 @@
         }
         <select class="form-control @CssClass" id="@Id" @bind="@CurrentValue" >
             <option disabled></option>
-            @foreach(SelectOption option in Options)
+            @foreach(Option option in Options)
             {
-                <option id=@option.Id>@option.Value</option>
+                <option value=@option.Value>@option.Text</option>
             }
         </select>
         <div class="form-control-validation">
@@ -22,20 +22,22 @@
 }
 else
 {
-    <div class="form-floating">
-        <select class="form-control form-select @CssClass" id="@Id" @bind="@CurrentValue" >
-            <option disabled selected></option>
-            @foreach(SelectOption option in Options)
+    <div class="form-control-wrapper">
+        <div class="form-floating">
+            <select class="form-control form-select @CssClass" id="@Id" @bind="@CurrentValue" >
+                <option disabled selected></option>
+                @foreach(Option option in Options)
+                {
+                    <option value=@option.Value>@option.Text</option>
+                }
+            </select>
+            @if (!string.IsNullOrWhiteSpace(Label))
             {
-                <option id=@option.Id>@option.Value</option>
+                <label class="form-control-label" for="@Id">@Label</label>        
             }
-        </select>
-        @if (!string.IsNullOrWhiteSpace(Label))
-        {
-            <label class="form-control-label" for="@Id">@Label</label>        
-        }
-        <div class="form-control-validation">
-            <ValidationMessage For="@ValidationFor" />
+            <div class="form-control-validation">
+                <ValidationMessage For="@ValidationFor" />
+            </div>
         </div>
     </div>
 }

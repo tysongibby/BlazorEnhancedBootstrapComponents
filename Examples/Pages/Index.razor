@@ -11,9 +11,9 @@
 
 <h5 class="mt-2">The following were selected:</h5>
 <ul>
-    @foreach (SelectOption option in resultList)
+    @foreach (Option option in resultList)
     {
-        <li id="@option.Id">@option.Value</li>
+        <li id="@option.Text">@option.Value</li>
     }
 </ul>
 

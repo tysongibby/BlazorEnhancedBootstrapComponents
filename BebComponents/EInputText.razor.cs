@@ -10,15 +10,15 @@ namespace BebComponents
         public Expression<Func<string>> ValidationFor { get; set; } = default!;
 
         [Parameter]
-        public string? Id { get; set; } = "EInputText";
+        public string Id { get; set; } = "EInputText";
 
         [Parameter]
-        public string? Label { get; set; }
+        public string Label { get; set; }
 
         [Parameter]
-        public bool? FloatingLabel { get; set; } = false;
+        public bool FloatingLabel { get; set; } = false;
 
-        protected override bool TryParseValueFromString(string? value, out string result, out string validationErrorMessage)
+        protected override bool TryParseValueFromString(string value, out string result, out string validationErrorMessage)
         {
             result = value;
             validationErrorMessage = null;

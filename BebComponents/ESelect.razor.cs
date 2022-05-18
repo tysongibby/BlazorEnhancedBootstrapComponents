@@ -12,17 +12,17 @@ namespace BebComponents
         [Parameter, EditorRequired]
         public Expression<Func<string>> ValidationFor { get; set; } = default!;
         [Parameter]
-        public string? Id { get; set; } = "ESelect";
+        public string Id { get; set; } = "ESelect";
         [Parameter]
-        public string? Label { get; set; }
+        public string Label { get; set; }
         [Parameter]
-        public bool? FloatingLabel { get; set; } = false;
+        public bool FloatingLabel { get; set; } = false;
         [Parameter]
-        public List<SelectOption>? Options { get; set; }
+        public List<Option> Options { get; set; }
         [Parameter]
-        public SelectOption? SelectedOption { get; set; }
+        public Option SelectedOption { get; set; }
         [Parameter]
-        public Action? Trigger { get; set; }
+        public Action Trigger { get; set; }
         [Parameter]
         public new string CurrentValue
         {
@@ -34,7 +34,7 @@ namespace BebComponents
             }
         }      
 
-        protected override bool TryParseValueFromString(string? value, out string result, out string validationErrorMessage)
+        protected override bool TryParseValueFromString(string value, out string result, out string validationErrorMessage)
         {            
             result = value; 
             validationErrorMessage = null;
