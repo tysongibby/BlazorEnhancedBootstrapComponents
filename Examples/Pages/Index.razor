@@ -3,7 +3,7 @@
 @using BebComponents.DataModels
 @using static BebComponents.EDualSelect
 
-
+<!-- **Dual Select**  -->
 <h3>Enhanced Dual Select Example</h3>
 <h5 class="mt-2">Make your selection</h5>
 <EDualSelect @ref="dualSelect" AvailableOptions="DualSelectOptions"></EDualSelect>
@@ -16,7 +16,9 @@
         <li id="@option.Text">@option.Value</li>
     }
 </ul>
+<!-- /end **Dual Select**  -->
 
+<!-- **Single Select**  -->
 <h3 class="mt-5">Enhanced Select Example</h3>
 <h5 class="mt-2">Make your selection</h5>
 <ESingleSelect @ref="eSingleSelect" Options="singleSelectOptions"></ESingleSelect>
@@ -24,6 +26,7 @@
 
 <h5 class="mt-2">The following was selected:</h5>
 <p>@eSingleSelectResult</p>
+<!-- /end **Single Select**  -->
 
 <EditForm Model="Form" OnValidSubmit="ValidFormSubmit" class="mt-5">
 <DataAnnotationsValidator />
