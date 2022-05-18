@@ -1,11 +1,11 @@
-﻿using BlazorComponents.Pages.PageModels;
+﻿using Examples.Pages.PageModels;
 using BebComponents;
 using static BebComponents.EDualSelect;
 using static BebComponents.ESingleSelect;
 using static BebComponents.ESelect;
 using BebComponents.DataModels;
 
-namespace BlazorComponents.Pages
+namespace Examples.Pages
 {    
     public partial class Index
     {

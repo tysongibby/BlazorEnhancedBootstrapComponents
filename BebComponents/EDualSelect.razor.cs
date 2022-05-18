@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 namespace BebComponents
 {
     /// <summary>
-    /// Dual Multiple select Blazor component. Holds options available to select in the left select element and selected options in the right select element. 
-    /// Set "AvailableOptions" by creating a List of DualSelectOptions: List<DualSelectOption>{ DualSelectOption { Id = int, Value = string } }
-    /// "SelectedOptions" retrieves the resulting list of DualSelectOptions that have been selected by the user. Returned via @ref= .
+    /// Dual Multiple select Blazor component. Holds options available for selection in the left select element and selected options in the right select element. 
+    /// Set "AvailableOptions" by creating a List of SelectOptions: List<SelectOption>{ SelectOption { Id = int, Value = string } }
+    /// "SelectedOptions" retrieves the list DualSelectOptions which contains the options selected by the user. Returned via @ref= .
     /// "BoxHeight" allows configuration of the row height of the text box of the multiple select elements.
     /// </summary>
     public partial class EDualSelect

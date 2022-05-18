@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace BlazorComponents.Pages.PageModels
+namespace Examples.Pages.PageModels
 {
     public class IndexFormModel
     {
