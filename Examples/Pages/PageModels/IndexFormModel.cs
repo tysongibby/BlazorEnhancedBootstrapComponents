@@ -15,5 +15,7 @@ namespace Examples.Pages.PageModels
         [Required]
         [Display(Name = "Preferred Name")]
         public string PreferredName { get; set; }
+
+        public string Age { get; set; }
     }
 }

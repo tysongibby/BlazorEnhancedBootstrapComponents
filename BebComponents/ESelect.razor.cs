@@ -12,7 +12,7 @@ namespace BebComponents
         [Parameter, EditorRequired]
         public Expression<Func<string>> ValidationFor { get; set; } = default!;
         [Parameter]
-        public string Id { get; set; } = "ESelect";
+        public string Id { get; set; }
         [Parameter]
         public string Label { get; set; }
         [Parameter]
@@ -40,14 +40,7 @@ namespace BebComponents
             validationErrorMessage = null;
             return true;
         }
-
-        //public void OnClick(SelectOption option)
-        //{
-        //    SelectedOption = option;            
-        //    Trigger?.Invoke();
-        //}
-
-       
+              
 
     }
 }

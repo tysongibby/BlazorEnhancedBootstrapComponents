@@ -1,0 +1,52 @@
+﻿@using BebComponents.DataModels
+@using System.Linq.Expressions
+@using System
+@using System.Collections.Generic
+@inherits InputBase<string>
+
+<div class="row">
+    <div class="col-3">
+        <select id="@Id" @bind=@CurrentValue class="form-control @CssClass" multiple="multiple" size="@BoxHieght" style="width:@BoxWidth">
+            @foreach (var option in Options)
+            {
+                <option @onclick="@(() => SelectOption(option))" value="@option.Value">@option.Text</option>
+            }
+        </select>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string Id { get; set; }
+    [Parameter]
+    public List<Option> Options { get; set; } = new List<Option>();
+    [Parameter]
+    public Option SelectedOption { get; set; } = new Option { Text = " ", Value = " " };
+    [Parameter]
+    public int BoxHieght { get; set; } = 5;
+    [Parameter]
+    public string BoxWidth { get; set; } = "auto";
+    [Parameter, EditorRequired]
+    public Expression<Func<string>> ValidationFor { get; set; } = default!;
+
+    private void SelectOption(Option option)
+    {
+        SelectedOption = option;
+    }
+    protected override bool TryParseValueFromString(string value, out string result, out string validationErrorMessage)
+    {
+        try
+        {
+            result = value;
+            validationErrorMessage = null;
+            return true;
+        }
+        catch (Exception exception)
+        {
+            result = null;
+            validationErrorMessage = exception.Message;
+            return false;
+        }
+
+    }    
+}

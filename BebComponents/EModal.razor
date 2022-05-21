@@ -1,0 +1,54 @@
+﻿<!-- Button trigger modal for testing -->
+@*<button type="button" class="btn btn-primary" data-bs-toggle="@Id" data-bs-target="#@Id">
+  Test Modal
+</button>*@
+
+<!-- Modal -->
+<div class="modal @CssClasses @cssShowClass" tabindex="-1" role="dialog" style="display:@modalDisplay" data-bs-backdrop="static">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header bg-opacity-75 bg-disaPurple">
+        <h5 class="modal-title text-white text-uppercase">@Title</h5>
+        <button type="button" class="btn-close" @onclick="() => Hide()"></button>
+      </div>
+      <div class="modal-body">
+        @Message
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" @onclick="() => Hide()">Close</button>     
+      </div>
+    </div>
+  </div>
+</div>
+
+@code {
+    [Parameter]
+    public string Id { get; set; } = "modal";
+    [Parameter]
+    public string Title { get; set; } = "Title goes here";
+    [Parameter]
+    public string Message { get; set; } = "Modal message goes here.";
+    [Parameter]
+    public string CssClasses { get; set; }
+
+    private string modalDisplay = "none;";
+    private string cssShowClass = "";
+    private bool showBackdrop = false;
+
+    public void Show()
+    {
+        modalDisplay = "block;";
+        cssShowClass = "Show";
+        showBackdrop = true;
+        StateHasChanged();
+    }
+
+    public void Hide()
+    {
+        modalDisplay = "none";
+        cssShowClass = "";
+        showBackdrop = false;
+        StateHasChanged();
+    }
+
+}

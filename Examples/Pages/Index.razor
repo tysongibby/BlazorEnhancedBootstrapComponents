@@ -18,20 +18,22 @@
 </ul>
 <!-- /end **Dual Select**  -->
 
-<!-- **Single Select**  -->
-<h3 class="mt-5">Enhanced Select Example</h3>
-<h5 class="mt-2">Make your selection</h5>
-<ESingleSelect @ref="eSingleSelect" Options="singleSelectOptions"></ESingleSelect>
-<button class="btn btn-primary mt-2" type="button" @onclick="SubmitESingleSelect">Submit ESelect</button>
 
-<h5 class="mt-2">The following was selected:</h5>
-<p>@eSingleSelectResult</p>
-<!-- /end **Single Select**  -->
 
 <EditForm Model="Form" OnValidSubmit="ValidFormSubmit" class="mt-5">
 <DataAnnotationsValidator />
 <h3>Form Example:</h3>
 <ValidationSummary />
+
+    <!-- **Multiple Select**  -->
+    <h3 class="mt-5">Enhanced Select Example</h3>
+    <h5 class="mt-2">Make your selection</h5>
+    <EMultipleSelect @ref="eMultipleSelect" Options="multipleSelectOptions" ValidationFor="() => Form.Age"></EMultipleSelect>
+    <button class="btn btn-primary mt-2" type="button" @onclick="SubmitEMultipleSelect">Submit ESelect</button>
+
+    <h5 class="mt-2">The following was selected:</h5>
+    <p>@eMultipleSelectResult</p>
+    <!-- /end **Multiple Select**  -->
 
     <h3 class="mt-2">Enhanced Input Text</h3>
     <EInputText Id="EInputText" Label="First Name" @bind-Value="Form.FirstName" ValidationFor="@( () => Form.FirstName)" />
@@ -58,5 +60,12 @@
         <h5>The preferred name selected is:</h5>
         <p>@Form.PreferredName</p>
     }
+
+    <InputSelect @bind-Value=Form.Age >
+        @foreach(Option option in multipleSelectOptions)
+        {
+            <option value="@option.Value">@option.Text</option>
+        }
+    </InputSelect>
 
 </EditForm>

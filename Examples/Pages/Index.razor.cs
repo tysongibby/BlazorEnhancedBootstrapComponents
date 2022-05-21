@@ -1,7 +1,7 @@
 ﻿using Examples.Pages.PageModels;
 using BebComponents;
 using static BebComponents.EDualSelect;
-using static BebComponents.ESingleSelect;
+using static BebComponents.EMultipleSelect;
 using static BebComponents.ESelect;
 using BebComponents.DataModels;
 using System.Collections.Generic;
@@ -37,9 +37,9 @@ namespace Examples.Pages
 
 
         // ** SELECT
-        private ESingleSelect eSingleSelect;
-        private string eSingleSelectResult;
-        private readonly List<Option> singleSelectOptions = new List<Option>
+        private EMultipleSelect eMultipleSelect;
+        private string eMultipleSelectResult;
+        private readonly List<Option> multipleSelectOptions = new List<Option>
         {
             new Option{ Value="1", Text="One"},
             new Option{ Value="2", Text="Two"},
@@ -54,9 +54,9 @@ namespace Examples.Pages
             new Option{ Value="11", Text="Eleven"},
         };
 
-        private void SubmitESingleSelect()
+        private void SubmitEMultipleSelect()
         {
-            eSingleSelectResult = eSingleSelect.SelectedOption.Value;
+            eMultipleSelectResult = eMultipleSelect.SelectedOption.Value;
         }
 
 
