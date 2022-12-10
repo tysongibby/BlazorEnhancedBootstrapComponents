@@ -1,0 +1,76 @@
+﻿<audio src="@AudioFilePath" controls="@ShowControls" loop="@Loop" controlsList="@controlList" />
+
+@*<btn @ref="playBtn" class="btn btn-primary" @onclick="TogglePlayPause">@playPauseBtnText</btn>*@
+
+@*https://learn.microsoft.com/en-us/aspnet/core/blazor/javascript-interoperability/call-javascript-from-dotnet?view=aspnetcore-7.0#capture-references-to-elements*@
+
+@code {
+    [Parameter]
+    public string AudioFilePath { get; set; }
+    [Parameter]
+    public bool Loop { get; set; } = false;
+    [Parameter]
+    public bool AllowDownload { get; set; } = false;
+    [Parameter]
+    public bool AllowPlaybackRate { get; set; } = true;
+    [Parameter]
+    public bool ShowControls { get; set; } = true;
+
+
+    private string controlList = string.Empty;
+    //private string loop = string.Empty;
+    //private string controls = string.Empty;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        //if (Loop)
+        //{
+        //    loop = "loop";
+        //}
+        //if (ShowControls)
+        //{
+        //    controls = "controls";
+        //}
+        if (!AllowDownload)
+        {
+            controlList = controlList + "nodownload ";
+        }
+        if (!AllowPlaybackRate)
+        {
+            controlList = controlList + "noplaybackrate ";
+        }
+    }
+
+
+
+
+    //private bool play = true;
+    //private string playPauseBtnText = "Play";
+    //private ElementReference playBtn;
+    //private ElementReference audio;
+
+    //private void TogglePlayPauseText()
+    //{
+    //    if (play)
+    //    {
+    //        playPauseBtnText = "Play";
+    //    }
+    //    else playPauseBtnText = "Pause";
+    //}
+
+    //private void TogglePlayPause()
+    //{
+    //    TogglePlayPauseText();
+    //    if (play)
+    //    {
+    //        //toggle play here
+    //    }
+    //}
+
+
+
+    
+
+
+}
