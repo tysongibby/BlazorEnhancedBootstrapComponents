@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Examples", "Examples\Exampl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BebComponents", "BebComponents\BebComponents.csproj", "{E4D95FB0-CC5F-4FDD-B3D9-26D196B75CDD}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetHelpers", "AspNetHelpers\AspNetHelpers.csproj", "{BF482D9A-6B69-48D9-9D69-17F1CCE34C47}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{E4D95FB0-CC5F-4FDD-B3D9-26D196B75CDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E4D95FB0-CC5F-4FDD-B3D9-26D196B75CDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E4D95FB0-CC5F-4FDD-B3D9-26D196B75CDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF482D9A-6B69-48D9-9D69-17F1CCE34C47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF482D9A-6B69-48D9-9D69-17F1CCE34C47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF482D9A-6B69-48D9-9D69-17F1CCE34C47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF482D9A-6B69-48D9-9D69-17F1CCE34C47}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

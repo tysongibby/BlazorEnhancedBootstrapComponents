@@ -9,7 +9,7 @@
     {
         <source src="@AudioFilePath" type="@FileTypeString" />
     }
-    <p>Not supported</p>
+    <p>Not Supported: @NotSupported</p>
 </audio>
 
 @*https://learn.microsoft.com/en-us/aspnet/core/blazor/javascript-interoperability/call-javascript-from-dotnet?view=aspnetcore-7.0#capture-references-to-elements*@
@@ -33,7 +33,7 @@
     [Parameter]
     public bool AutoPlay { get; set; } = false;
     [Parameter]
-    public string NotSupported { get; set; } = "Your browser does not support HTML 5 media or it does not support this audio file type.";
+    public string NotSupported { get; set; } = "Your browser does not support this file type or it does not HTML 5 media.";
 
     public string FileTypeString { get; set; } = string.Empty;
 
