@@ -68,10 +68,10 @@ namespace AspNetHelpers
         }
 
         /// <summary>
-        /// Creates PdmssUser using the user's X509Certificate2.Subject to pull the needed user data from the database.                
+        /// Creates ApplicaitonUser using the user's X509Certificate2.Subject to pull the needed user data from the database.                
         /// </summary>
-        /// <returns>Returns a PdmssUser</returns>
-        public ApplicationUser GetPdmssUser(HttpContext httpContext)
+        /// <returns>Returns a ApplicationUser</returns>
+        public ApplicationUser GetApplicationUser(HttpContext httpContext)
         {
             if (httpContext is null)
             {
@@ -97,16 +97,7 @@ namespace AspNetHelpers
         /// <returns>String of developer's X509Certificate2.Subject</returns>
         public string GetDeveloperCertificateSubject()
         {
-            //return "ANDERSON.GARY.R.1364054870";
-            //return "KERSHAW.STEVEN.1499431100";
-            //return "COOK.STEVEN.T.1268138672";
-            //return "CARDALL.CURT.ALLEN.1158517856";
-            //return "JOHNS.LAURENCE.BLAINE.1268065519";
-            //return "STANLEY.MARTIN.1406911230";
-            //return "SLEVE.GORDON.N.1268255032";
-            return "GIBBY.HENRY.TYSON.1222765567";
-            //return "JAMES.DOUGLAS.W.1231545316";
-            //return "ELKINS.BRIAN.J.1228622091";
+            return "GIBBY.HENRY.TYSON.12345678";
         }
     }
 }
