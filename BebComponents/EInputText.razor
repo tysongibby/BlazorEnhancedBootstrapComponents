@@ -1,4 +1,7 @@
-﻿@inherits InputBase<string>
+@using Microsoft.AspNetCore.Components.Forms
+@using System.Linq.Expressions
+
+@inherits InputBase<string>
 
 @if(FloatingLabel == false)
 {
@@ -24,7 +27,28 @@ else
     </div>
 }
 
+@code{
+    [Parameter, EditorRequired]
+    public Expression<Func<string>> ValidationFor { get; set; } = default!;
 
+    [Parameter]
+    public string Id { get; set; } = "EInputText";
 
+    [Parameter]
+    public string? Label { get; set; }
 
+    [Parameter]
+    public bool FloatingLabel { get; set; } = false;
 
+    protected override bool TryParseValueFromString(string? value, out string result, out string validationErrorMessage)
+    {
+        if (!string.IsNullOrWhiteSpace(value))
+        {
+            // when needed replace this code block with logic to process value
+            result = value;
+        }
+        else result = string.Empty;
+        validationErrorMessage = string.Empty;
+        return true;
+    }
+}
