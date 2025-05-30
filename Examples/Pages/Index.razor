@@ -36,14 +36,14 @@
     <!-- /end **Multiple Select**  -->
 
     <h3 class="mt-2">Enhanced Input Text</h3>
-    <EInputText Id="EInputText" Label="First Name" @bind-Value="Form.FirstName" ValidationFor="@( () => Form.FirstName)" />
-    <button class="btn btn-primary mt-2" type="submit">Submit EInputText</button>
+    <EInput Id="EInput" Label="First Name" @bind-Value="Form.FirstName" ValidationFor="@( () => Form.FirstName)" />
+    <button class="btn btn-primary mt-2" type="submit">Submit EInput</button>
     <h5 class="mt-2">The first name entered is:</h5>
     <p>@firstName</p>
     
     <h3 class="mt-2">Enhanced Input Text - floating label</h3>
-    <EInputText Id="EInputText2" Label="First Name" @bind-Value="Form.FirstName" ValidationFor="@( () => Form.FirstName)" FloatingLabel="true" />
-    <button class="btn btn-primary mt-2" type="submit">Submit EInputText</button>
+    <EInput Id="EInput2" Label="First Name" @bind-Value="Form.FirstName" ValidationFor="@( () => Form.FirstName)" FloatingLabel="true" />
+    <button class="btn btn-primary mt-2" type="submit">Submit EInput</button>
     <h5 class="mt-2">The first name entered is:</h5>
     <p>@firstName</p>
     
