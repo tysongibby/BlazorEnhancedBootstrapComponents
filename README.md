@@ -14,7 +14,7 @@ Input Text Box with built in validation and floating label functionality, using 
 
 
 ### Audio 
-Use one tag to add audio, including audtion featuers such as loop, allowing download, playback rate, controls, different file types, auto-play, and unsupported browser handling.
+Use one tag to add audio, including audtio featuers such as loop, allowing download, playback rate, controls, different file types, auto-play, and unsupported browser handling.
   
 ### Modal
 Add a modal message using only one tag.
